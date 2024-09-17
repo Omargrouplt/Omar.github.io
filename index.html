@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="bg-white flex items-center justify-center min-h-screen">
+  <div class="text-center">
+   <img alt="Abstract logo with black, red, yellow, and brown squares" class="mx-auto mb-8" src="https://i.ibb.co/mv32x68/large-3-om-CNLb-Bay-transformed.png" width="100"/>
+   <h1 class="font-great-vibes text-4xl mb-8">
+    Welcome
+   </h1>
+   <div style="background-color:AntiqueWhite" class="bg-gray-200 p-10 rounded-lg shadow-md inline-block">
+    <form id="orderForm">
+     <div class="mb-4">
+      <input class="w-full p-2 rounded-full border border-black text-left" id="name" placeholder="NAME" type="text"/>
+     </div>
+     <div class="mb-4">
+      <input class="w-full p-2 rounded-full border border-black text-left" id="phone" placeholder="PHONE No" type="text"/>
+     </div>
+     <button class="px-4 py-2 border border-black rounded" type="submit">
+      ORDER
+     </button>
+      <iframe id="redirect-iframe" style="display: none;"></iframe>
+    </form>
+   </div>
+  </div>
+  <style>
+   .font-great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+  </style>
+  <script>
+   document.getElementById('orderForm').addEventListener('submit', function(event) {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            if (name === '' || phone === '') {
+                alert('Please fill out both fields.');
+                event.preventDefault();
+            } else if (phone.length < 8) {
+                alert('Phone number must be at least 8 digits.');
+                event.preventDefault();
+            }
+        });
+  </script>
+ </body>
+</html>
